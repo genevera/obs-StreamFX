@@ -26,8 +26,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [ "macos-12" ]
-        compiler: [ "Clang" ]
+        runner: "macos-12"
+        compiler: "Clang"
         qt: [ 6 ]
         include:
           - compiler: "Clang"
@@ -35,7 +35,7 @@ jobs:
             CMAKE_GENERATOR: "Xcode"
             CMAKE_OSX_DEPLOYMENT_TARGET: "10.15"
             CMAKE_OSX_ARCHITECTURES: "x86_64;arm64"
-    runs-on: "self-hosted"
+    runs-on: "${{ matrix.runner }}
     name: "${{ matrix.name }} (${{ matrix.compiler }})"
     env:
       CMAKE_GENERATOR: "${{ matrix.CMAKE_GENERATOR }}"

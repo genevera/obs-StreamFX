@@ -26,8 +26,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: "macos-12"
-        compiler: "Clang"
+        runner: ["macos-12"]
+        compiler: ["Clang"]
         qt: [ 6 ]
         include:
           - compiler: "Clang"
